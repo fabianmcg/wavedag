@@ -3,7 +3,7 @@
 
 BASE = pragma-parser
 BISON = bison
-CXX = g++-9
+CXX ?= g++
 FLEX = flex
 XSLTPROC = xsltproc
 CXXFLAGS ?= -std=c++17

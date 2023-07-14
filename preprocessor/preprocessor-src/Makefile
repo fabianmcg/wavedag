@@ -1,7 +1,9 @@
 BASE = preprocessor
-CXX ?= g++-9
+CXX ?= g++
 CXXFLAGS ?= -std=c++17
 CXXFLAGS += -O1
+LLVM_ROOT ?= /usr/lib/llvm-17
+
 SRCS = src/preprocessor.cc \
 	src/io.cc \
 	src/util.cc \
@@ -15,7 +17,7 @@ SRCS = src/preprocessor.cc \
 all: $(BASE)
 
 $(BASE):
-	$(CXX) $(CXXFLAGS) $(SRCS) preprocessor.cpp -I/usr/lib/llvm-9/include -Iinclude -L/usr/lib/llvm-9/lib -Llib -o preprocessor -lclang -lboost_program_options -lpragma-parser
+	$(CXX) $(CXXFLAGS) $(SRCS) preprocessor.cpp -I$(LLVM_ROOT)/include -Iinclude -L$(LLVM_ROOT)/lib -Llib -o preprocessor -lclang -lboost_program_options -lpragma-parser
 
 clean:
 	rm -f preprocessor

@@ -1,6 +1,6 @@
 BASE = preprocessor
 BISON = bison
-CXX = g++-9
+CXX ?= g++
 FLEX = flex
 CXXFLAGS ?= -std=c++17
 
