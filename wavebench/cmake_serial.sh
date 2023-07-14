@@ -34,11 +34,11 @@ cmake \
  \
   -DCMAKE_C_COMPILER:STRING=nvc \
   -DCMAKE_CXX_COMPILER:STRING=nvc++ \
-  -DCMAKE_C_FLAGS:STRING="-O3 -Mlarge_arrays -DNM_VALUE=$NM_VALUE $ALG_OPTIONS -acc=multicore  -Minfo=accel" \
+  -DCMAKE_C_FLAGS:STRING="-O3 -Mlarge_arrays -DNM_VALUE=$NM_VALUE $ALG_OPTIONS -acc=host  -Minfo=accel" \
 \
   -DCMAKE_C_FLAGS_DEBUG:STRING="-g" \
   -DCMAKE_C_FLAGS_RELEASE:STRING="" \
-  -DCMAKE_CXX_FLAGS:STRING="-O3 -Mlarge_arrays -DNM_VALUE=$NM_VALUE $ALG_OPTIONS -acc=multicore  -Minfo=accel" \
+  -DCMAKE_CXX_FLAGS:STRING="-O3 -Mlarge_arrays -DNM_VALUE=$NM_VALUE $ALG_OPTIONS -acc=host  -Minfo=accel" \
 \
   -DCMAKE_CXX_FLAGS_DEBUG:STRING="-g" \
   -DCMAKE_CXX_FLAGS_RELEASE:STRING="" \
