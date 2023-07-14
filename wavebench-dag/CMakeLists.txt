@@ -1,6 +1,6 @@
 #==============================================================================
 
-cmake_minimum_required(VERSION 2.8)
+cmake_minimum_required(VERSION 3.13)
 
 project("wavebench")
 
@@ -23,8 +23,6 @@ SET(SOURCES
   include/core/io/std-io.cpp
   include/omp_dag_timing.cpp
   )
-
-set(CMAKE_CXX_COMPILER g++-9)
 
 INCLUDE_DIRECTORIES(${INCLUDE_DIRS})
 ADD_LIBRARY(wavebench_lib STATIC ${SOURCES})

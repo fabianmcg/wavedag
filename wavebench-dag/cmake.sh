@@ -22,8 +22,8 @@ fi
 
 #------------------------------------------------------------------------------
 
-bash -c "cd src/algorithms; ../../../preprocessor/preprocessor local_sequence_alignment.cpp -o local_sequence_alignment.cpp -c \"-std=c++17 -I../main\" ${opts}"
-bash -c "cd src/algorithms; ../../../preprocessor/preprocessor radiation_transport.cpp -o radiation_transport.cpp -c \"-std=c++17 -I../main\" ${opts}"
+bash -c "cd src/algorithms; ../../../preprocessor/preprocessor local_sequence_alignment.cpp -o local_sequence_alignment.cpp -c \"-std=c++17 -I../main -I../../include\" ${opts}"
+bash -c "cd src/algorithms; ../../../preprocessor/preprocessor radiation_transport.cpp -o radiation_transport.cpp -c \"-std=c++17 -I../main -I../../include\" ${opts}"
 
 mkdir build
 cd build
@@ -31,8 +31,8 @@ cmake \
   -DCMAKE_BUILD_TYPE:STRING="$BUILD" \
   -DCMAKE_INSTALL_PREFIX:PATH="$INSTALL" \
  \
-  -DCMAKE_C_COMPILER:STRING=gcc-9 \
-  -DCMAKE_CXX_COMPILER:STRING=g++-9 \
+  -DCMAKE_C_COMPILER:STRING=gcc \
+  -DCMAKE_CXX_COMPILER:STRING=g++ \
   -DCMAKE_C_FLAGS:STRING="-O3 -D_OPENMP=201811 -fopenmp -DNM_VALUE=$NM_VALUE $ALG_OPTIONS" \
 \
   -DCMAKE_C_FLAGS_DEBUG:STRING="-g" \
