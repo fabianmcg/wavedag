@@ -35,6 +35,11 @@ Basic Smith-Waterman with Wave-DAG pragmas added.
     }
 ```
 The resulting code then will be preprocessod by the Wave-DAG preprocessor and output a C++ OpenMP 5.0 compliant parallel code.
+### Results
+<p align="center">
+  <img src="https://github.com/fabianmcg/wavedag/blob/3da3c0a2b0c5c66156736b3af2c299d5b004952a/sw.png" width=50% height=50%>
+</p>
+__Lower the better:__ Execution time for the Smith-Waterman Wavebench benchmark on Perlmutter NVIDIA A100 GPUs and AMD EPYC 7763 CPUs. Both `nvc-mp` & `gcc-omp-dag` were executed using 64 threads.
 
 ## Building and runninng
 To build Wave-DAG you need GCC 9.2 and in order to run the original wavebench code you need a working PGI compiler.
